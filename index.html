@@ -175,7 +175,7 @@
             margin-top: -500px;
         }
         
-        .water-mark-5,.water-mark-6, .water-mark-7 :hover{
+        .water-mark-5, .water-mark-7 :hover{
             z-index: 2;
             background-color: rgba(255, 170, 0, 0.577);
             height: 200px;
@@ -183,6 +183,28 @@
             border-radius: 100%;
             margin-top: -300px;
             margin-left: 200px;
+            animation-name:water-marks;
+            transform: translateX(20px);
+        }
+        .water-mark-6{
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.577);
+            height: 300px;
+            width: 300px;
+            border-radius: 100%;
+            margin-top: -300px;
+            margin-left: 200px;
+            animation-name:water-marks;
+            transform: translateX(20px);
+        }
+        .water-mark-7{
+            z-index: 2;
+            background-color: rgba(255, 0, 0, 0.325);
+            height: 400px;
+            width: 400px;
+            border-radius: 100%;
+            margin-top: -100px;
+            margin-left: 300px;
             animation-name:water-marks;
             transform: translateX(20px);
         }
@@ -207,6 +229,16 @@
             transition: 10s;
         }
         .water-mark-5:hover{
+            transform: translateX(200px);
+            transform: translateX(200px),translateY(200px);
+            transition: 10s;
+        }
+        .water-mark-1:hover{
+            transform: translateX(200px);
+            transform: translateX(200px),translateY(200px);
+            transition: 10s;
+        }
+        .water-mark:hover{
             transform: translateX(200px);
             transform: translateX(200px),translateY(200px);
             transition: 10s;
