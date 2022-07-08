@@ -4,18 +4,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <title>Sharmake</title>
     <style>
-        h1{
+        body{
+            background-image:linear-gradient(to right,rgb(107, 107, 107), rgb(231, 231, 231));
+        }
+        header{
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+            background-image: linear-gradient(to right, lightblue,lightcyan);
+            align-items:baseline;
+            align-content: center;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 10px grey;
+        }
+        .title-name{
+            color: black;
+            font-size: 35px;
             text-align: center;
-            color: white;
-            background-color: darkcyan;
+            font-family: monospace;
+            border-radius: 20px;
+            background-image: linear-gradient(to right,lightcyan, lightblue);
+            width: 60%;
+            box-shadow: 2px 2px 5px white;
+        }
+        .yey{
+            color: rgb(0, 76, 43);
+            font-size: 25px;
+        }
+        .nav-bar{
+            color: rgb(0, 102, 255);
+            font-size: 15px;
+            font-family: monospace;
+            padding: 10px;
+            align-content: center;
+            text-align: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .nav-bar span{
+            text-align: center;
+            align-items: center;
+            background-color:aliceblue;
+            margin-right: 10px;
+            font-weight: 100;
+            border-radius: 20px;
+            padding: 5px;
+        }
+        .social-bar{
+            display: flex;
+            width:40%;
+            margin-left: 20px;
+            align-content: center;
+            text-align: center;
+            align-items: center;
+            margin-top: 5px;
+        }
+        .social-bar span{
+            margin-left: 20px;
+            font-size: 23px;
+            align-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .bi-facebook{
+            color: rgb(0, 102, 255);
+            text-shadow: 2px 1px 3px white;
+        }
+        .bi-instagram{
+            color: rgb(172, 83, 0);
+            text-shadow: 2px 1px 3px white;
+        }
+        .bi-whatsapp{
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 1px 3px rgb(59, 197, 0);
+        }
+        .profile-card{
+            width: 20%;
+            background-color: aliceblue;
+            margin: 20px;
+            box-shadow: 1px 1px 5px black;
+            border-radius: 10px;
+        }
+        .profile-card img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .sharmake{
+            color: grey;
+            font-family: monospace;
+            font-size: 15px;
+            margin-left: 10px;
+        }
+        .profile-card p{
+            color: darkslategrey;
             font-family: arial;
+            font-size: 12;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Sharmake Ahmed</h1>
+    <header>
+        <div class="title-name">Sharmake<span class="yey"><sub> yey</sub></span></div>
+        <div class="nav-bar">
+            <nav>
+                <span>My Profile</span>
+                <span>Contact</span>
+                <span>My Story</span>
+            </nav>
+        </div>
+        <div class="social-bar">
+            <span class="bi bi-facebook"></span>
+            <span class="bi bi-instagram"></span>
+            <span class="bi bi-whatsapp"></span>
+        </div>
+    </header>
+    <section>
+        <main>
+            <div class="profile-card">
+                <img src="./public/portfolio1.jpg">
+                <div class="sharmake">Sharmake Ahmed Mahamed</div>
+                <p>I am <span style="color: grey; font-family:monospace;">Sharmake Ahmed</span>, and i am a Web Developer and college student.</p>
+            </div>
+        </main>
+    </section>
     <marquee>
         <p>welcome to my webpage</p>
     </marquee>
