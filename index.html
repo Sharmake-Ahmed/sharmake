@@ -8,6 +8,7 @@
     <style>
         body{
             background-image:linear-gradient(to right,rgb(107, 107, 107), rgb(231, 231, 231));
+            z-index: 0;
         }
         header{
             display: grid;
@@ -18,6 +19,7 @@
             padding: 5px;
             border-radius: 5px;
             box-shadow: 1px 1px 10px grey;
+            z-index: 4;
         }
         .title-name{
             color: black;
@@ -83,9 +85,11 @@
         .profile-card{
             width: 20%;
             background-color: aliceblue;
-            margin: 20px;
+            margin: 10px;
             box-shadow: 1px 1px 5px black;
             border-radius: 10px;
+            height: 450px;
+            z-index: 4;
         }
         .profile-card img{
             width: 100%;
@@ -102,6 +106,110 @@
             font-family: arial;
             font-size: 10;
             padding: 10px;
+        }
+        button{
+            color: white;
+            background-color: lightskyblue;
+            font-family: monospace;
+            font-size: 18px;
+            padding: 7px;
+            border-radius: 10px;
+            border: none;
+            margin-left: 120px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        .water-mark{
+            z-index: 1;
+            background-color: rgba(0, 255, 255, 0.428);
+            height: 600px;
+            width: 600px;
+            border-radius: 100%;
+            margin-left: 20px;
+            margin-top: -600px;
+        }
+        .water-mark-1{
+            z-index: 2;
+            background-color: rgba(177, 242, 254, 0.428);
+            height: 500px;
+            width: 500px;
+            border-radius: 100%;
+            margin-right: -720px;
+            margin-top: -600px;
+        }
+        .water-mark-2{
+            z-index: 1;
+            background-color: rgba(147, 120, 0, 0.362);
+            height: 600px;
+            width: 600px;
+            border-radius: 100%;
+            margin-left: 620px;
+            margin-top: -500px;
+        }
+        .water-mark-3{
+            z-index: 1;
+            background-color: rgba(255, 170, 0, 0.577);
+            height: 400px;
+            width: 400px;
+            border-radius: 100%;
+            margin-left: 820px;
+            margin-top: -500px;
+        }
+        .water-mark-3{
+            z-index: 1;
+            background-color: rgba(255, 170, 0, 0.577);
+            height: 400px;
+            width: 400px;
+            border-radius: 100%;
+            margin-left: 820px;
+            margin-top: -500px;
+        }
+        
+        .water-mark-4{
+            z-index: 1;
+            background-color: rgba(233, 123, 255, 0.577);
+            height: 500px;
+            width: 500px;
+            border-radius: 100%;
+            margin-left: 400px;
+            margin-top: -500px;
+        }
+        
+        .water-mark-5,.water-mark-6, .water-mark-7 :hover{
+            z-index: 2;
+            background-color: rgba(255, 170, 0, 0.577);
+            height: 200px;
+            width: 200px;
+            border-radius: 100%;
+            margin-top: -300px;
+            margin-left: 200px;
+            animation-name:water-marks;
+            transform: translateX(20px);
+        }
+        .water-mark-6:hover{
+            transform: translateX(200px);
+            transform: translateX(200px),translateY(200px);
+            transition: 10s;
+        }
+        .water-mark-3:hover{
+            transform: translateX(200px);
+            transform: translateX(200px),translateY(200px);
+            transition: 10s;
+        }
+        .water-mark-2:hover{
+            transform: translateX(200px);
+            transform: translateX(200px),translateY(200px);
+            transition: 10s;
+        }
+        .water-mark-4:hover{
+            transform: translateX(200px);
+            transform: translateX(200px),translateY(200px);
+            transition: 10s;
+        }
+        .water-mark-5:hover{
+            transform: translateX(200px);
+            transform: translateX(200px),translateY(200px);
+            transition: 10s;
         }
     </style>
 </head>
@@ -127,7 +235,23 @@
                 <img src="./public/portfolio1.jpg">
                 <div class="sharmake">Sharmake Ahmed Mahamed</div>
                 <p>I am <span style="color: grey; font-family:monospace;">Sharmake Ahmed</span>, and i am a Web Developer and college student.</p>
-            <button class="btn btn-danger">sign in</button>
+            <button>sign in</button>
+            </div>
+            <div class="water-mark">
+            </div>
+            <div class="water-mark-1">
+            </div>
+            <div class="water-mark-2">
+            </div>
+            <div class="water-mark-3">
+            </div>
+            <div class="water-mark-4">
+            </div>
+            <div class="water-mark-5">
+            </div>
+            <div class="water-mark-6">
+            </div>
+            <div class="water-mark-7">
             </div>
         </main>
     </section>
