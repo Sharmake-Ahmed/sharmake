@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="">
     <title>Sharmake</title>
     <style>
         body{
             background-image:linear-gradient(to right,rgb(107, 107, 107), rgb(231, 231, 231));
-            z-index: 0;
         }
         header{
             display: grid;
-            grid-template-columns: 4fr 4fr 4fr;
+            grid-template-columns: 4fr 4fr 2fr 2fr;
             background-image: linear-gradient(to right, lightblue,lightcyan);
             align-items:baseline;
             align-content: center;
             padding: 5px;
             border-radius: 5px;
             box-shadow: 1px 1px 10px grey;
-            z-index: 4;
+            z-index: 2;
+            grid-template-rows: 1;
         }
         .title-name{
             color: black;
@@ -83,13 +84,35 @@
             text-shadow: 2px 1px 3px rgb(59, 197, 0);
         }
         .profile-card{
-            width: 20%;
+            width: 18%;
             background-color: aliceblue;
             margin: 10px;
             box-shadow: 1px 1px 5px black;
             border-radius: 10px;
-            height: 450px;
-            z-index: 4;
+            height: 440px;
+            z-index: 1;
+        }
+        .register{
+        }
+        .registr{
+            z-index: 0;
+            margin-left: -5px;
+        }
+        .registr button{
+            color: white;
+            background-color: rgb(0, 135, 27);
+            font-family: monospace;
+            font-size: 18px;
+            padding: 5px;
+            border-radius: 10px;
+            border: none;
+            margin-left: 20px;
+        }
+        .bi-person{
+            padding: 5px;
+            color: black;
+            z-index: 1;
+            font-size: 32px;
         }
         .profile-card img{
             width: 100%;
@@ -107,7 +130,7 @@
             font-size: 10;
             padding: 10px;
         }
-        button{
+        .profile-card button{
             color: white;
             background-color: lightskyblue;
             font-family: monospace;
@@ -119,129 +142,52 @@
             margin-top: -10px;
             margin-bottom: 10px;
         }
-        .water-mark{
-            z-index: 1;
-            background-color: rgba(0, 255, 255, 0.428);
-            height: 600px;
-            width: 600px;
-            border-radius: 100%;
-            margin-left: 20px;
-            margin-top: -600px;
-        }
         .water-mark-1{
-            z-index: 2;
-            background-color: rgba(177, 242, 254, 0.428);
-            height: 500px;
-            width: 500px;
+            background-color: rgba(18, 6, 255, 0.224);
+            height: 700px;
+            width: 700px;
             border-radius: 100%;
-            margin-right: -720px;
+            margin-left: -60px;
             margin-top: -600px;
         }
         .water-mark-2{
             z-index: 1;
-            background-color: rgba(147, 120, 0, 0.362);
-            height: 600px;
-            width: 600px;
+            background-color: rgba(159, 5, 254, 0.399);
+            height: 700px;
+            width: 700px;
             border-radius: 100%;
-            margin-left: 620px;
-            margin-top: -500px;
+            margin-left: 520px;
+            margin-top: -700px;
         }
-        .water-mark-3{
-            z-index: 1;
-            background-color: rgba(255, 170, 0, 0.577);
-            height: 400px;
-            width: 400px;
-            border-radius: 100%;
-            margin-left: 820px;
-            margin-top: -500px;
-        }
-        .water-mark-3{
-            z-index: 1;
-            background-color: rgba(255, 170, 0, 0.577);
-            height: 400px;
-            width: 400px;
-            border-radius: 100%;
-            margin-left: 820px;
-            margin-top: -500px;
-        }
-        
-        .water-mark-4{
-            z-index: 1;
-            background-color: rgba(233, 123, 255, 0.577);
-            height: 500px;
-            width: 500px;
-            border-radius: 100%;
-            margin-left: 400px;
-            margin-top: -500px;
-        }
-        
-        .water-mark-5, .water-mark-7 :hover{
-            z-index: 2;
-            background-color: rgba(255, 170, 0, 0.577);
-            height: 200px;
-            width: 200px;
-            border-radius: 100%;
-            margin-top: -300px;
-            margin-left: 200px;
-            animation-name:water-marks;
-            transform: translateX(20px);
-        }
-        .water-mark-6{
-            z-index: 2;
-            background-color: rgba(255, 255, 255, 0.577);
-            height: 300px;
-            width: 300px;
-            border-radius: 100%;
-            margin-top: -300px;
-            margin-left: 200px;
-            animation-name:water-marks;
-            transform: translateX(20px);
-        }
-        .water-mark-7{
-            z-index: 2;
-            background-color: rgba(255, 0, 0, 0.325);
-            height: 400px;
-            width: 400px;
-            border-radius: 100%;
-            margin-top: -100px;
+        .bio{
+            color: white;
+            background-image: linear-gradient(to left, rgba(0, 119, 152, 0.431), rgba(42, 0, 100, 0.439));
+            width: 550px;
+            height: 150px;
+            margin-top: -40%;
             margin-left: 300px;
-            animation-name:water-marks;
-            transform: translateX(20px);
+            font-size: 25px;
+            font-family: monospace;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgb(0, 225, 255);
+            z-index: 1;
         }
-        .water-mark-6:hover{
-            transform: translateX(200px);
-            transform: translateX(200px),translateY(200px);
-            transition: 10s;
+        .w-mark{
+            z-index: 0;
         }
-        .water-mark-3:hover{
-            transform: translateX(200px);
-            transform: translateX(200px),translateY(200px);
-            transition: 10s;
+        section{
+            display: grid;
+            grid-template-rows: 2;
         }
-        .water-mark-2:hover{
-            transform: translateX(200px);
-            transform: translateX(200px),translateY(200px);
-            transition: 10s;
-        }
-        .water-mark-4:hover{
-            transform: translateX(200px);
-            transform: translateX(200px),translateY(200px);
-            transition: 10s;
-        }
-        .water-mark-5:hover{
-            transform: translateX(200px);
-            transform: translateX(200px),translateY(200px);
-            transition: 10s;
-        }
-        .water-mark-1:hover{
-            transform: translateX(200px);
-            transform: translateX(200px),translateY(200px);
-            transition: 10s;
-        }
-        .water-mark:hover{
-            transform: translateX(200px);
-            transform: translateX(200px),translateY(200px);
-            transition: 10s;
+        footer{
+            display: grid;
+            grid-template-rows: 3;
+            color: white;
+            font-family: monospace;
+            background-color: black;
+            text-align: right;
+            padding: 10px;
         }
     </style>
 </head>
@@ -260,6 +206,10 @@
             <span class="bi bi-instagram"></span>
             <span class="bi bi-whatsapp"></span>
         </div>
+        <div class="register">
+            <span class="bi bi-person"></span>
+            <span class="registr"><button>register</button></span>
+        </div>
     </header>
     <section>
         <main>
@@ -267,28 +217,26 @@
                 <img src="./public/portfolio1.jpg">
                 <div class="sharmake">Sharmake Ahmed Mahamed</div>
                 <p>I am <span style="color: grey; font-family:monospace;">Sharmake Ahmed</span>, and i am a Web Developer and college student.</p>
-            <button>sign in</button>
+            <button type="submit" name="sign-in">sign in</button>
             </div>
-            <div class="water-mark">
+            <div class="w-mark">
+                <div class="water-mark-1">
+                </div>
+                <div class="water-mark-2">
+                </div>
+                <div class="water-mark-3">
+                </div>
+                </div>
             </div>
-            <div class="water-mark-1">
-            </div>
-            <div class="water-mark-2">
-            </div>
-            <div class="water-mark-3">
-            </div>
-            <div class="water-mark-4">
-            </div>
-            <div class="water-mark-5">
-            </div>
-            <div class="water-mark-6">
-            </div>
-            <div class="water-mark-7">
-            </div>
+            
         </main>
+        <div class="bio">
+            <p>Sharmake Yey is a site, that designs and develope various templates for webpages.
+                We are diverse team and creatives from all over the world.</p>
+        </div>
     </section>
-    <marquee>
-        <p>welcome to my webpage</p>
-    </marquee>
+    <footer>
+        &copy;Sharmake Ahmed
+    </footer>
 </body>
 </html>
