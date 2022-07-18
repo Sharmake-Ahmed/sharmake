@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cards with aref</title>
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    </head>
+    <body class="container">
+        <button data-bs-target="#login" data-bs-toggle="modal" class="btn btn-primary mt-4">log in</button>
+        <div class="modal fade" id="login" >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>log in</h2>
+                        <button data-bs-dismiss="modal" class="btn-close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <dl>
+                            <dt><label for="email">User Name</label></dt>
+                            <dd><input type="email" class="form-control"></dd>
+                            <dt><label for="password">Password</label></dt>
+                            <dd><input type="password" class="form-control"></dd>
+                        </dl>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success"> Log in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-warning" data-bs-target="#signup" data-bs-toggle="modal">Sign up</button>
+        <div class="modal w-100" id="signup">
+            <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable w-100 ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Sign up</h2>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body form-container w-100">
+                        <form class="w-100  p-2 rounded rounded-4 bg-warning">
+                            <div class="d-flex">
+                                <div class="m-2">
+                                    <label for="f-name" class="bg-success text-light m-2 p-2 rounded-3">First name</label>
+                                    <div><input name="f-name" type="text" class="form-control"></div>
+                                </div>
+                                <div class="m-2">
+                                    <label for="m-name" class="bg-success text-light m-2 p-2 rounded-3">Middle name</label>
+                                    <div><input name="m-name" type="text" class="form-control"></div>
+                                </div>
+                                <div class="m-2">
+                                    <label for="l-name" class="bg-success text-light  m-2 p-2 rounded-3">Last name</label>
+                                    <div><input name="l-name" type="text" class="form-control"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="user-name" class="bg-success text-light p-2 rounded-3">Email</label>
+                                <div><input name="user-name" type="text" class="form-control w-75 m-4"></div>
+                            </div>
+                            <div>
+                                <label for="user-name-comfirm" class="bg-success text-light p-2 rounded-3">Comfirm your Email</label>
+                                <div><input name="user-name-comfirm" type="text" class="form-control w-75 m-4"></div>
+                            </div>
+                            <div>
+                                <label for="password" class="bg-success text-light p-2 rounded-3">Password</label>
+                                <div><input name="password" type="password" class="form-control w-75 m-4"></div>
+                            </div>
+                            
+                                <label for="c-password" class="bg-success text-light p-2 rounded-3">Comfirm Password</label>
+                                <div><input name="c-password" type="password" class="form-control w-75 m-4"></div>
+                            
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary w-75 m-4 text-light">sign up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-primary w-50 alert-dismissible m-4">
+            <button class="btn-close" data-bs-dismiss="alert"></button>
+            <div class="alert-title text-danger"><h2>Update latest Version</h2></div>
+            <div class="alert-text text-dark m-4">The latest version is released and ready to use</div>
+            <div class="alert-help"><span class="bi bi-info text-info border border-1 bg-light p-1 m-4 rounded-pill">help</span></div>
+        </div>
+        <script src="../../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>

@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  
+    <link rel="stylesheet" href="../sharmake/node_modules/bootstrap/dist/css/bootstrap.css">
     <title>Sharmake</title>
     <style>
         body{
             background-image:linear-gradient(to right,rgb(107, 107, 107), rgb(231, 231, 231));
+            width: 100%;
         }
         header{
             display: grid;
@@ -21,6 +23,9 @@
             box-shadow: 1px 1px 10px grey;
             z-index: 2;
             grid-template-rows: 1;
+            width: 100%;
+            position: fixed;
+            margin-bottom: 50px;
         }
         .title-name{
             color: black;
@@ -92,8 +97,6 @@
             height: 440px;
             z-index: 1;
         }
-        .register{
-        }
         .registr{
             z-index: 0;
             margin-left: -5px;
@@ -160,8 +163,8 @@
             margin-top: -700px;
         }
         .bio{
-            color: white;
-            background-image: linear-gradient(to left, rgba(0, 119, 152, 0.431), rgba(42, 0, 100, 0.439));
+            color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255, 0.638);
             width: 550px;
             height: 150px;
             margin-top: -40%;
@@ -173,21 +176,20 @@
             box-shadow: 2px 2px 10px rgb(0, 225, 255);
             z-index: 1;
         }
-        .w-mark{
-            z-index: 0;
-        }
         section{
             display: grid;
+            grid-template-columns: 1/4;
             grid-template-rows: 2;
+            width: 100%;
         }
         footer{
-            display: grid;
-            grid-template-rows: 3;
             color: white;
             font-family: monospace;
             background-color: black;
             text-align: right;
             padding: 10px;
+            width: 100%;
+            margin-top: 50%;
         }
     </style>
 </head>
@@ -206,9 +208,9 @@
             <span class="bi bi-instagram"></span>
             <span class="bi bi-whatsapp"></span>
         </div>
-        <div class="register">
+        <div class="register input-group">
             <span class="bi bi-person"></span>
-            <span class="registr"><button>register</button></span>
+            <span class="registr form-control"><button>sign in</button></span>
         </div>
     </header>
     <section>
@@ -217,23 +219,19 @@
                 <img src="./public/portfolio1.jpg">
                 <div class="sharmake">Sharmake Ahmed Mahamed</div>
                 <p>I am <span style="color: grey; font-family:monospace;">Sharmake Ahmed</span>, and i am a Web Developer and college student.</p>
-            <button type="submit" name="sign-in">sign in</button>
+                <button>sign in</button>
             </div>
-            <div class="w-mark">
-                <div class="water-mark-1">
-                </div>
-                <div class="water-mark-2">
-                </div>
-                <div class="water-mark-3">
-                </div>
-                </div>
+            <div class="water-mark-1">
             </div>
-            
+            <div class="water-mark-2">
+            </div>
+            <div class="water-mark-3">
+            </div>
+            <div class="bio">
+                <p>Sharmake Yey is a site, that designs and develope various templates for webpages.
+                    We are diverse team and creatives from all over the world.</p>
+            </div>
         </main>
-        <div class="bio">
-            <p>Sharmake Yey is a site, that designs and develope various templates for webpages.
-                We are diverse team and creatives from all over the world.</p>
-        </div>
     </section>
     <footer>
         &copy;Sharmake Ahmed

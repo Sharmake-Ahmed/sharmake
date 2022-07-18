@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Info.</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <style>
+            body{
+                background-color: rgb(190, 190, 190);
+            }
+            form{
+                display: grid;
+                grid-template-columns: 4 8fr;
+                margin-left: 10px;
+                height: 500px;
+                overflow: auto;
+            }
+            form span{
+                background-color: rgb(43, 189, 226);
+                color: rgb(0, 0, 0);
+                font-family: arial;
+                padding: 5px;
+                border-radius: 10px;
+                font-size: 18px;
+                box-shadow: 2px 2px 5px grey;
+
+            }
+            input{
+                background-color: rgb(43, 189, 226);
+                margin-left: 100px;
+                margin-top: 20px;
+                font-size: 22px;
+                color: azure;
+                border-radius: 10px;padding: 5px;
+                box-shadow: 2px 2px 5px grey;
+                border: none;
+            }
+            button{
+                background-color: rgb(6, 110, 255);
+                margin-left: 500px;
+                margin-top: 20px;
+                font-size: 15px;
+                color: azure;
+                padding: 5px;
+                border-radius: 10px;padding: 5px;
+                box-shadow: 2px 2px 5px grey;
+                border: none;
+            }
+            legend{
+                background-color: rgb(0, 22, 27);
+                margin-left: 100px;
+                margin-top: 20px;
+                font-size: 18px;
+                color: azure;
+                border-radius: 10px;
+                padding: 7px;
+                box-shadow: 2px 2px 5px grey;
+                border: none;
+            }
+            fieldset{
+                margin: 40px;
+                border-radius: 15px;
+                background-color: rgb(255, 255, 255);
+                padding: 5px;
+                box-shadow: 2px 2px 5px grey;
+                border: none;
+                width: 60%;
+                margin-left: 200px;
+                
+            }
+            input:hover{
+                background-color: rgb(194, 201, 203);
+                color: rgb(0, 0, 0);
+                font-family: arial;
+                padding: 5px;
+                border-radius: 10px;
+                font-size: 25px;
+                box-shadow: 2px 2px 5px grey;
+            }
+            button:hover{
+                background-color: rgb(43, 189, 226);
+                color: rgb(0, 0, 0);
+                font-family: arial;
+                padding: 5px;
+                border-radius: 10px;
+                font-size: 25px;
+                box-shadow: 2px 2px 5px grey;
+            }
+            details{
+                background-color: rgb(224, 198, 198);
+                color: rgb(0, 0, 0);
+                font-family: arial;
+                padding: 5px;
+                border-radius: 10px;
+                font-size: 15px;
+                margin: 10px;
+                box-shadow: 2px 2px 5px grey;
+            }
+            h1{
+                background-color: rgb(42, 99, 32);
+                color: white;
+                width:max-content;
+                text-align: center;
+                font-family: monospace;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 10px;
+                box-shadow: 2px 2px 5px grey;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>New Account</legend>
+            <summary>
+                <details aria-valuetext="Account"> <h1>New Account</h1>
+                    <form action="landkit.html">
+                        <ul>
+                            <li><span>YOUR NAME &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</span> <input type="text" placeholder="your full name"></li>
+                            <li><span>LAST NAME &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span> <input type="text" placeholder="last name"></li>
+                            <li><span>MOTHER'S NAME</span> <input type="text" placeholder="your mother's name"></li>
+                            <li><span>BIRTHDAY  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <input type="date" placeholder="dd/mm/yyyy"></li>
+                            <li><span>COUNTRY   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <input type="country" placeholder="country"></li>
+                            <li><span>CITY    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <input type="text" placeholder="city"></li>
+                        </ul>
+                        <div>
+                            <button type="submit" >
+                                SIGN UP
+                            </button>
+                        </div>
+                    </form>
+                </details>
+            </summary>
+        </fieldset>
+        
+    </body>
+</html>
