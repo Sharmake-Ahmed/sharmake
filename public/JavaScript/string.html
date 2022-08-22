@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>string</title>
+    <script>
+        function verifyEmail(){
+            var email = document.getElementById("userID").value;
+            document.getElementById("board").innerHTML = email;
+            if(email.indexOf("@") == -1){
+                document.getElementById("board").innerHTML = "invalid".fontcolor("red").fontsize("5");
+            } else if(email.indexOf("@") <= 3){
+                document.getElementById("board").innerHTML = "valid".fontcolor("red").fontsize("5");
+            }else if(email.endsWith("gmail.com" == false)){
+                document.getElementById("board").innerHTML = "valid".fontcolor("red").fontsize("5");
+            }
+            
+        }
+        function verifyStock(){
+            var stock = document.getElementById("stock");
+            document.getElementById("msg").innerHTML = stock;
+            if(stock.checked == 1){
+                document.getElementById("msg").style.display = "block";
+                document.getElementById("msg").innerHTML = "Available";
+            }else{
+                document.getElementById("msg").innerHTML = "Unavailable";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid w-75 " style="display: flex; justify-content:space-between;">
+        <div>
+            <dl class="m-4 bg-secondary p-4 w-100">
+                <dt >Email </dt>
+                <dd><input type="text" id="userID" class="form-control w-75" onblur="verifyEmail()"></dd>
+            </dl>
+        </div>
+        <div id="board"></div>
+    </div>
+    <div class="form-switch">
+        <input class="form-check-input"  type="checkbox" id="stock" onchange="verifyStock()">
+        <div id="msg"></div>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>

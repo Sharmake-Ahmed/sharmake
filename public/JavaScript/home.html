@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java i/o</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function openWindow(){
+            alert("welcome to javascript")
+        }
+        function deleteIt(){
+            flag = confirm("Are you sure you want to continue to delete")
+            if (flag == true){
+                document.querySelector("P").innerHTML = "<font color='red'><i>you successfuly deleted</i></font>";
+                document.getElementById("lplName").innerHTML = "";
+                document.getElementById("lplProduct").innerHTML = "";
+                document.getElementById("lplPrice").innerHTML = "";
+                document.getElementById("lplStock").innerHTML = "";
+            }
+            else if (flag == false) {
+                document.querySelector("P").innerHTML = "<font color='green'><i> you canceled</i></font>";
+            } else {
+                document.querySelector("P").innerHTML = "<font color='red'><i>you did not take any action</i></font>";
+            }
+        }
+        function CreateFolder(){
+               folderName = document.getElementById("txtFolder").value;
+               if(folderName == "") {
+                alert("Please Provide Folder Name");
+               } else {
+                 document.getElementById("names").innerHTML += "Folder Created : " + folderName + "<br>";
+                 document.getElementById("txtFolder").value="";
+               }
+            }
+            function rgtrProduct(){
+               document.getElementById("info").style.display = "block";
+               name = document.getElementById("name").value;
+               if(name == ""){
+                alert("Please fill it with your name")
+               } else{
+                    document.getElementById("lplName").innerHTML = name;
+                }
+                 product = document.getElementById("product").value;
+                if(product == ""){
+                  alert("Please fill it with the product name")
+                } else{
+                    document.getElementById("lplProduct").innerHTML = product;
+                }
+                  price = document.getElementById("price").value;
+                  if(price == ""){
+                  alert("Please provide the price")
+                 } else{
+                    document.getElementById("lplPrice").innerHTML = price;
+                }
+                stock = document.getElementById("stock").value;
+               if(stock == true){
+                document.getElementById("lplStock").innerHTML = "the product is available";
+               } else{
+                    document.getElementById("lplStock").innerHTML = "Not available in the stock";
+                    document.getElementById("stock").value="";
+                }
+                
+            }
+            function editBtn(){
+                    document.getElementById("registerBtn").innerHTML = "Update";
+            }
+            
+    </script>
+</head>
+<body>
+    <button onclick="openWindow()"></button>
+    <div class="container-fluid">
+        <button data-bs-target="#register" data-bs-toggle="modal" class="btn btn-primary" >Register</button>
+        <div class="modal" id="register">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>register</h2>
+                        <button data-bs-dismiss="modal" class="btn-close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" name="register">
+                            <dl>
+                                <dt>Name</dt>
+                                <dd><input id="name" class="form-control" type="text" name="Name"></dd>
+                                <dt>Product</dt>
+                                <dd><input id="product" class="form-control" type="text" name="Product"></dd>
+                                <dt>Price</dt>
+                                <dd><input id="price" class="form-control" type="number" name="Price"></dd>
+                                <dt>Stock</dt>
+                                <dd id="stock" class="form-switch">Not Available <input class="form-check-input ms-4 me-4 bg-success" type="checkbox" name="Stock"> Available</dd>
+                            </dl>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-bs-dismiss="modal" class="btn btn-success" onclick="rgtrProduct()" id="registerBtn" type="submit">Register</button> 
+                        <button data-bs-dismiss="modal" class="btn btn-danger">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="productInfo" style="display: none;" id="info">
+        <h1>Product Info.</h1>
+        <dt>Name</dt>
+        <dd id="lplName" class="ms-4 text-danger"></dd>
+        <dt>Product</dt>
+        <dd id="lplProduct" class="ms-4 text-danger"></dd>
+        <dt>Price</dt>
+        <dd id="lplPrice" class="ms-4 text-danger"></dd>
+        <dt>Stock</dt>
+        <dd id="lplStock" class="ms-4 text-danger"></dd>
+        <button data-bs-toggle="modal" data-bs-target="#register" id="edit" class="btn btn-danger" onclick="editBtn()">Edit</button>
+        <button onclick="deleteIt()" class="btn btn-danger">Delete</button>
+    <p></p>
+    </div>
+    
+    <div class="input-group">
+        <span class="input-group-text">New Folder</span><input id="txtFolder" class="form-control" type="text"><button class="btn btn-warning" onclick="CreateFolder()">Create</button><br>
+    </div>
+    <div id="names"></div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

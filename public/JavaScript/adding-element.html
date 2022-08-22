@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var categories = ["sharma","aref","yusuf","abbas"];
+        function bodyload(){
+            categories.sort();
+            categories.reverse();
+            for(var item of categories){
+               var option = document.createElement("option");
+               option.text = item;
+               option.value = item;
+               document.getElementById("items").appendChild(option);
+            }
+        }
+        function add(){
+            document.getElementById("items").innerHTML = "";
+            var cat = document.getElementById("new").value;
+            if(categories.indexOf(cat) == -1){
+                categories.push(cat);
+                bodyload();
+                document.getElementById("new").value = "";
+            }else{
+                alert(`${cat} is already exist`)
+            }
+        }
+        function remove(){
+            var selectedName = document.getElementById("items").value;
+            var NameIndex = categories.indexOf(selectedName);
+            var flag = confirm(`are you sure! you want to remove ${selectedName}`);
+            if(flag == true){
+                categories.splice(NameIndex,1);
+                alert(`${selectedName} is removed...`);
+                document.getElementById("items").innerText = "";
+            }
+            bodyload();
+        }
+        
+    </script>
+</head>
+<body onload="bodyload()">
+    <select id="items">
+    </select>
+    <br>
+    <input type="text" id="new">
+    <input type="button" value="add" onclick="add()">
+    <br>
+    <input type="button" onclick="remove()" value="remove">
+    <div id="contai" style=" border: 5px solid red;"></div>
+</body>
+</html>

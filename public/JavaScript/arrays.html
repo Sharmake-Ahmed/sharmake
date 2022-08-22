@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>arrays</title>
+    <script>
+        function bmiCalculate(){
+            var weight = document.getElementById("kg").value;
+            var height = document.getElementById("m").value;
+            var result;
+            h = height/100;
+            result = weight / (h*h);
+            document.getElementById("board").innerHTML = result;
+        }
+        function bodyLoad(){
+            var categories = [233,2333,333,3344];
+            for(item of categories){
+                var cat = document.createElement("li");
+                cat.innerHTML = item;
+            }
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <header style="background-color: orange;">
+        <div class="container-fluid d-flex" style="justify-content: space-between;">
+            <div  style="background-image:linear-gradient(to right, rgba(79, 0, 158, 0.486),rgba(111, 0, 121, 0.534)); border-radius: 10px; padding: 5px; font-family: monospace; font-size: 40px;">
+                SHARMAKE <sub>yey</sub>
+            </div>
+            <div class="d-flex mt-4">
+                <div class="page-link ms-4" style="font-family: monospace; font-size: 20px; border-radius: 10px;">HOME</div>
+                <div class="page-link ms-4" style="font-family: monospace; font-size: 20px; border-radius: 10px;">PROJECTS</div>
+                <div class="page-link ms-4" style="font-family: monospace; font-size: 20px; border-radius: 10px;">CONTACT US</div>
+                <div class="page-link ms-4" style="font-family: monospace; font-size: 20px; border-radius: 10px;">ABOUT</div>
+            </div>
+            <div>
+                <button class="btn btn-primary mt-4">
+                    sign in
+                    <span class="bi bi-person"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <input type="text" id="kg">
+    <input type="text" id="m">
+    <input onclick="bmiCalculate()" type="button">
+    <div id="board"></div>
+    <ul>
+
+    </ul>
+</body>
+</html>

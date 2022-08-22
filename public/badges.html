@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>badges</title>
+</head>
+<body>
+    <button class="btn btn-dark m-4"><span class="bi bi-bell"></span> Notification <span class="badge bg-danger">9</span></button>
+    <div class="dropdown" style="display: flex; justify-content:center;">
+        <button data-bs-toggle="dropdown" data-bs-target="#drops" class="btn btn-dark dropdown-toggle m-4"><span class="bi bi-bell"></span> messages <span class="badge bg-warning rounded rounded-circle">7</span></button>
+        <div class="dropdown-menu w-50" id="drops">
+            <div style="display: flex; justify-content:space-between; position:sticky;"><h6 style="color: orange; text-align:center; margin-left: 10px;">Notifications</h6> <h6 style="color: rgb(0, 72, 255); text-align:center; margin-right: 10px;">Mark all as read</h6></div>
+            <div class="container-fluid scrollable"  style="height: 250px; overflow: auto;">
+                <div class="dropdown-item ">
+                    <div class="d-flex"><img src="../public/portfolio2.jpg" alt="" width="40px" height="40px" class="rounded rounded-circle"><h4 class="ms-4">Ahmed aref</h4></div>
+                    <div style="font-size: 9; color: grey">Hello! buddy, how are you</div>
+                 </div>
+                 <div class="dropdown-item">
+                     <div  class="d-flex"><img src="../public/portfolio1.jpg" alt="" width="20px" height="20px" class="rounded rounded-circle"><h4 class="ms-4">sharmake</h4></div>
+                     <div style="font-size: 9; color: grey">where are you</div>
+                  </div>
+                  <div class="dropdown-item">
+                     <div  class="d-flex"><img src="../public/portfolio4.jpg" alt="" width="20px" height="20px" class="rounded rounded-circle"><h4 class="ms-4">Abdalluh</h4></div>
+                     <div style="font-size: 9; color: grey">hhhhhh</div>
+                  </div>
+                  <div class="dropdown-item">
+                     <div  class="d-flex"><img src="../public/portfolio3.jpg" alt="" width="20px" height="20px" class="rounded rounded-circle"><h4 class="ms-4">moha</h4></div>
+                     <div style="font-size: 9; color: grey">no, whait</div>
+                  </div>
+                  <div class="dropdown-item">
+                     <div  class="d-flex"><img src="../public/portfolio6.jpg" alt="" width="25px" height="25px" class="rounded rounded-circle"><h4 class="ms-4">yahya</h4></div>
+                     <div style="font-size: 9; color: grey">tell me when it's done</div>
+                  </div>
+                  <div class="dropdown-item">
+                     <div class="d-flex"><img src="../public/portfolio7.jpg" alt="" width="20px" height="20px" class="rounded rounded-circle"><h4 class="ms-4 margin-bottom-4">yusuf</h4></div>
+                     <div style="font-size: 9; color: grey">Hello!</div>
+                  </div>
+                  <div class="dropdown-item">
+                     <div  class="d-flex"><img src="../public/portfolio5.jpg" alt="" width="20px" height="20px" class="rounded rounded-circle"><h4 class="ms-4">sumaya</h4></div>
+                     <div style="font-size: 9; color: grey">okey</div>
+                  </div>
+            </div>
+            <h5 style="color: blue; text-align: center;">view all</h5>
+        </div>
+   </div>
+    <div class="container-fluid m-3">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+        </ul>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

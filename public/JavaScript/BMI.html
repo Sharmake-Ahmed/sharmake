@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>BMI Calculator</title>
+    <script type="text/javascript">
+        function calculate(){
+            document.getElementById("boards").style.display = "block";
+            document.getElementById("pointer").style.display = "block";
+            var m = document.getElementById("height").value ;
+            var kg = document.getElementById("weight").value ;
+            cm = m/100;
+            bmi = kg / (cm*cm);
+            document.getElementById("msg").innerHTML = parseFloat(bmi).toFixed(2);
+            if(m == "" || kg == ""){
+                document.getElementById("msg").innerHTML = "INVALID VALUE!";
+                msg.style.color = "white";
+                document.getElementById("health").innerHTML = "OOPs, you have to fill heights and weights to check your 'BMI',   THANK YOU.";
+                health.style.color = "lightyellow";
+            } else if(bmi < 18.5){
+                document.getElementById("health").innerHTML = "You are Mild thinness!";
+                document.getElementById("pointer").style.marginLeft = "10%";
+            } else if(bmi > 18.5 && bmi < 25){
+                document.getElementById("health").innerHTML = "You have a Normal BMI's, Keep it up.";
+                health.style.color = "white";
+                document.getElementById("pointer").style.marginLeft = "37%";
+            } else if(bmi > 25 && bmi < 30){
+                document.getElementById("health").innerHTML = "You are Over Weight!";
+                health.style.color = "yellow";
+                document.getElementById("pointer").style.marginLeft = "60%";
+            }else{
+                document.getElementById("health").innerHTML = "You are Obese Class!!!";
+                health.style.color = "ivory";
+                document.getElementById("pointer").style.marginLeft = "90%";
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="container border border-primary m-4 p-4" style="border-radius: 20px; box-shadow:1px 0px 10px black;">
+        <div class="container-fluid d-flex">
+            <div class="container-fluid">
+                <div class="form-switch m-4 d-none">
+                    <input type="radio" name="gender" id="optMale" value="male">Male
+                    <input type="radio" name="gender" id="optFemale" value="female">Female
+                </div>
+                <div class="input-group w-50">
+                    <span class="input-group-text " style="background-image:linear-gradient(to right,rgba(189, 170, 3, 0.511),rgba(255, 253, 140, 0.528));">Height</span>
+                    <input type="text" id="height" class="form-control">
+                    <span class="input-group-text " style="background-image:linear-gradient(to right,rgba(189, 170, 3, 0.511),rgba(255, 253, 140, 0.528));">in cm</span>
+                </div>
+                <div class="input-group w-50">
+                    <span class="input-group-text" style="background-image:linear-gradient(to right,rgba(189, 170, 3, 0.511),rgba(255, 253, 140, 0.528));">Weight</span>
+                    <input type="text" id="weight" class="form-control">
+                    <span class="input-group-text" style="background-image:linear-gradient(to right,rgba(189, 170, 3, 0.511),rgba(255, 253, 140, 0.528));">in kg</span>
+                </div>
+                <button class="btn  m-4" onclick="calculate()" style="background-image:linear-gradient(to right,rgba(171, 0, 0, 0.511),rgba(13, 131, 0, 0.528));">Calculate</button>
+            </div>
+            <div id="boards" class="container-fluid w-75" style="margin-top: 50px; background-image:linear-gradient(to left,rgba(82, 0, 171, 0.684),rgba(0, 143, 156, 0.498)); border-radius: 15px; font-family: monospace; text-align: center; font-weight: bold; height:max-content; display: none;">
+                <h1 id="msg"></h1>
+                <p id="health" style="color: red; font-family:monospace;"></p>
+            </div>
+        </div>
+        <div class="container-fluid p-4">
+            <div class="progress">
+                <div class="progress-bar  w-25 p-2" style="background-image:linear-gradient(to right,rgba(171, 0, 0, 0.511),rgba(13, 131, 0, 0.528));">
+                    Mild Thinness
+                </div>
+                <div class="progress-bar w-25" style="background-image:linear-gradient(to right,rgba(7, 157, 2, 0.615),rgba(1, 169, 141, 0.534));">
+                    Normal
+                </div>
+                <div class="progress-bar w-25" style="background-image:linear-gradient(to right,rgba(189, 170, 3, 0.511),rgba(255, 253, 140, 0.528));">
+                    Over Weight
+                </div>
+                <div class="progress-bar w-25" style="background-image:linear-gradient(to right,rgba(197, 195, 172, 0.66),rgba(255, 255, 255, 0.528));">
+                    Obese Class
+                </div>
+            </div>
+            <div id="pointer" style="display: none;">
+                <div class="bi bi-caret-down-fill"></div>
+                you
+            </div>
+        </div>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

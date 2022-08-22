@@ -1,0 +1,14 @@
+.container {
+  background-color: rgb(166, 0, 255);
+  border-radius: 7px;
+  width: 300px;
+}
+.container h1 {
+  color: rgba(0, 178, 187, 0.732);
+}
+.container p {
+  padding: 50px;
+  color: black;
+}
+
+/*# sourceMappingURL=sass.css.map */

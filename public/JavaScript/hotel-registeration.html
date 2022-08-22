@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Hotel Registeration</title>
+    <script>
+        function register(){
+            document.getElementById("lblname").innerHTML = document.getElementById("name").value;
+            document.getElementById("lblperson").innerHTML = document.getElementById("person").value;
+            document.getElementById("lbldays").innerHTML = document.getElementById("days").value;
+            document.getElementById("lbldate").innerHTML = document.getElementById("date").value;
+            document.getElementById("lbladv").innerHTML = document.getElementById("advance").value;
+            var cheep = document.getElementById("cheep");
+            var cost = document.getElementById("cost");
+            var ac = document.getElementById("ac");
+            var locker = document.getElementById("locker");
+            var advance = document.getElementById("advance").value;
+            var days = document.getElementById("days").value;
+            var Total = 0;
+            var room1 = 3400;
+            var room2 = 1600;
+            advanced = advance - advance*2;
+            document.getElementById("lbladva").innerHTML = advanced;
+            if(cost.checked){
+                if(ac.checked){
+                    Total = room1 + 1000;
+                    document.getElementById("lblac").innerText = 1000 * days; 
+                    document.getElementById("lblbill").innerHTML = Total * days;
+                    document.getElementById("lbltotal").innerHTML = (Total * days) + advanced;
+                }
+                if(locker.checked){
+                    Total = room1 + 500;
+                    document.getElementById("lbllock").innerText = 500 * days; 
+                    document.getElementById("lblbill").innerHTML = Total * days;
+                    document.getElementById("lbltotal").innerHTML = (Total * days) + advanced;
+                }
+            }
+            if(cheep.checked){
+                if(ac.checked){
+                    Total = room2 + 1000;
+                    document.getElementById("lblac").innerText = 1000 * days; 
+                    document.getElementById("lblbill").innerHTML = Total * days;
+                    document.getElementById("lblbill").innerHTML = (Total * days) + advanced;
+                }
+                if(locker.checked){
+                    Total = room2 + 500;
+                    document.getElementById("lbllock").innerText = 500 * days; 
+                    document.getElementById("lblbill").innerHTML = Total * days;
+                    document.getElementById("lblbill").innerHTML = (Total * days) + advanced;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid d-flex">
+        <div class="col p-2">
+            NAME: <input class="form-control mt-2 w-75" type="text" id="name">
+            PERSONS: <input class="form-control mt-2 w-75" type="number" id="person">
+            DAYS: <input class="form-control mt-2 w-75" type="number" id="days">
+            DATE: <input class="form-control mt-2 w-75" type="date" id="date">
+            ADVANCE: <input  class="form-control mt-2 w-75" type="number" id="advance">
+        </div>
+        <div class="row  p-2 text-center">
+            <div class="row-6" style="align-items:center; justify-content:center;">
+                <div>
+                    <img height="120px" width="200px" style="border-radius: 15px; box-shadow: 1px 1px 5px black; font-size: 30px;"  src="../../public/deluxe.jpg" alt="">
+                </div>
+                <h2>Suite Room</h2>
+                <p>3400/-</p>
+                <input type="radio" id="cost" name="hotel">
+            </div>
+            <div class="row-6">
+                <div>
+                    <img height="120px" width="200px" style="border-radius: 15px; box-shadow: 1px 1px 5px black; font-size: 30px;" src="../../public/suite.jpg" alt="">
+                </div>
+                <h2>Deluxe Room</h2>
+                <p>1600/-</p>
+                <input type="radio" id="cheep" name="hotel">
+            </div>
+        </div>
+        <div class="row p-2 text-center">
+            <div class="row-6" style="align-items:center; justify-content:center;">
+                <div>
+                    <img height="120px" width="200px" style="border-radius: 15px; box-shadow: 1px 1px 5px black; font-size: 30px;"  src="../../public/ac.jpg" alt="">
+                </div>
+                <h2>A/C</h2>
+                <p>1000/-</p>
+                <input type="radio" id="ac" name="room">
+            </div>
+            <div class="row-6">
+                <div>
+                    <img height="120px" width="200px" style="border-radius: 15px; box-shadow: 1px 1px 5px black; font-size: 30px;" src="../../public/locker.jpg" alt="">
+                </div>
+                <h2>Locker</h2>
+                <p>500/-</p>
+                <input type="radio" id="locker" name="room">
+            </div>
+        </div>
+        <div class="modal" id="billSummary">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Bill Summary</h2>
+                    </div>
+                    <div class="modal-body row">
+                        <div class="col">
+                            <dl class="row">
+                                <dt class="col-3">Name</dt>
+                                <dd class="col-9" id="lblname"></dd>
+                                <dt class="col-9">Persons</dt>
+                                <dd class="col-3" id="lblperson"></dd>
+                                <dt class="col-9">Days</dt>
+                                <dd class="col-3" id="lbldays"></dd>
+                                <dt class="col-6">Date</dt>
+                                <dd class="col-6" id="lbldate"></dd>
+                                <dt class="col-9">Advance</dt>
+                                <dd class="col-3" id="lbladv"></dd>
+                            </dl>
+                        </div>
+                        <div class="col">
+                            <dl class="row">
+                                <dt class="col-9">Advance Ammount</dt>
+                                <dd class="col-3" id="lbladva"></dd>
+                                <dt class="col-9">A/C</dt>
+                                <dd class="col-3" id="lblac"></dd>
+                                <dt class="col-9">Locker</dt>
+                                <dd class="col-3" id="lbllock"></dd>
+                                <dt class="col-9">Bill</dt>
+                                <dd class="col-3" id="lblbill"></dd>
+                                <dt class="col-9">Total</dt>
+                                <dd class="col-3" id="lbltotal"></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button data-bs-target="#billSummary" data-bs-toggle="modal" class="btn btn-warning w-100 mt-3" onclick="register()" id="butre">Register</button>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

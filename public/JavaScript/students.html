@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>students</title>
+    <script>
+        function bodyload(){
+            fetch("../data/students.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                for(var item of data){
+                    var tr = document.createElement("tr");
+                    var tdName = document.createElement("td");
+                    var tdId = document.createElement("td");
+                    var tdGrade = document.createElement("td");
+                    var tdmath = document.createElement("td");
+                    var tdeng = document.createElement("td");
+                    var tdbio = document.createElement("td");
+                    var tdchem = document.createElement("td");
+                    var tdphy = document.createElement("td");
+                    var tdatt = document.createElement("td");
+                    var tdbirth = document.createElement("td");
+
+                    tdName.className = "col-3";
+                    tdId.className = "col-2";
+                    tdGrade.className = "col-1";
+                    tdmath.className = "col-1";
+                    tdeng.className = "col-1";
+                    tdbio.className = "col-1";
+                    tdchem.className = "col-1";
+                    tdphy.className = "col-1";
+                    tdatt.className = "col-1";
+                    tdbirth.className = "col-1";
+
+                    tdName.innerHTML = item.name;
+                    tdId.innerHTML = item.id;
+                    tdGrade.innerHTML = item.grade;
+                    tdmath.innerHTML = item.subjects.math;
+                    tdeng.innerHTML = item.subjects.english;
+                    tdbio.innerHTML = item.subjects.biology;
+                    tdchem.innerHTML = item.subjects.chemstary;
+                    tdphy.innerHTML = item.subjects.physics;
+                    tdatt.innerHTML = item.subjects.attitude;
+                    tdbirth.innerHTML = item.birth;
+                    tr.appendChild(tdName);
+                    tr.appendChild(tdId);
+                    tr.appendChild(tdGrade);
+                    tr.appendChild(tdmath);
+                    tr.appendChild(tdeng);
+                    tr.appendChild(tdbio);
+                    tr.appendChild(tdchem);
+                    tr.appendChild(tdphy);
+                    tr.appendChild(tdatt);
+                    tr.appendChild(tdbirth);
+                    document.querySelector("tbody").appendChild(tr);
+                }
+            })
+        }
+        function addstudent(){
+            var tr = document.createElement("tr");
+            var tdName = document.createElement("td");
+            var tdId = document.createElement("td");
+            var tdGrade = document.createElement("td");
+            var tdmath = document.createElement("td");
+            var tdeng = document.createElement("td");
+            var tdbio = document.createElement("td");
+            var tdchem = document.createElement("td");
+            var tdphy = document.createElement("td");
+            var tdatt = document.createElement("td");
+            var tdbirth = document.createElement("td");
+            tdName.className = "col-3";
+            tdId.className = "col-2";
+            tdGrade.className = "col-1";
+            tdmath.className = "col-1";
+            tdeng.className = "col-1";
+            tdbio.className = "col-1";
+            tdchem.className = "col-1";
+            tdphy.className = "col-1";
+            tdatt.className = "col-1";
+            tdbirth.className = "col-1";
+            tdName.innerHTML = document.getElementById("lblname").value;
+            tdId.innerHTML = document.getElementById("lblid").value;
+            tdGrade.innerHTML = document.getElementById("lblgrade").value;
+            tdmath.innerHTML = document.getElementById("lblmath").value;
+            tdeng.innerHTML = document.getElementById("lbleng").value;
+            tdbio.innerHTML = document.getElementById("lblbio").value;
+            tdchem.innerHTML = document.getElementById("lblphy").value;
+            tdphy.innerHTML = document.getElementById("lblchem").value;
+            tdatt.innerHTML = document.getElementById("lblatt").value;
+            tdbirth.innerHTML = document.getElementById("lblbirth").value;
+            tr.appendChild(tdName);
+            tr.appendChild(tdId);
+            tr.appendChild(tdGrade);
+            tr.appendChild(tdmath);
+            tr.appendChild(tdeng);
+            tr.appendChild(tdbio);
+            tr.appendChild(tdchem);
+            tr.appendChild(tdphy);
+            tr.appendChild(tdatt);
+            tr.appendChild(tdbirth);
+            document.querySelector("tbody").appendChild(tr);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div class="container-fluid">
+        <table class="table mt-3 ">
+            <thead class="head row">
+                <td class="col-3">Name</td>
+                <td class="col-2">ID</td>
+                <td class="col-1">Grade</td>
+                <td class="col-1">MATH</td>
+                <td class="col-1">ENGLISH</td>
+                <td class="col-1">BIOLOGY</td>
+                <td class="col-1">CHEMSTARY</td>
+                <td class="col-1">PHYSICS</td>
+                <td class="col-1">ATTITUDE</td>
+                <td class="col-1">BIRTH</td>
+            </thead>
+            <tbody class="body row">
+
+            </tbody>
+        </table>
+    </div>
+    <div  class="container-fluid d-flex p-2 m-4" style="justify-content:space-between;">
+        <div class="row w-25 m-4">
+            <td  class="row">NAME: <input  type="text" class="form-input  m-2" id="lblname"></td>
+            <td  class="row">ID: <input  type="text" class="form-input  m-2" id="lblid"></td>
+            <td   class="row">GRADE: <input  type="text" class="form-input  m-2" id="lblgrade"></td>
+            <td  class="row">YEAR OF BIRTH:<input  type="text" class="form-input  m-2" id="lblbirth"></td>
+        </div>
+        <table class="row w-25 m-4">
+            <td   class="row"> MATH: <input  type="text" class="form-input  m-2" id="lblmath"></td>
+            <td  class="row">ENGLISH: <input  type="text" class="form-input  m-2" id="lbleng"></td>
+            <td  class="row">BIOLOGY: <input  type="text" class="form-input  m-2" id="lblbio"></td>
+            <td class="row">CHEMSTARY: <input  type="text" class="form-input  m-2" id="lblchem"></td>
+            <td class="row">PHYSICS: <input  type="text" class="form-input  m-2" id="lblphy"></td>
+            <td class="row">ATTITUDE: <input  type="text" class="form-input  m-2" id="lblatt"></td>
+        </table>
+    </div>
+    <button style="justify-content:end;" class="btn btn-primary w-100 justify-content-center m-2" onclick="addstudent();"><span class="bi bi-person"></span> Register</button>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

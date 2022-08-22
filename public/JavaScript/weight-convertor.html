@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Weight convertor</title>
+    <script type="text/javascript">
+        function convertKilos(){
+                kilo = document.getElementById("weight").value;
+                convertion = kilo / 2.23;
+                document.getElementById("board").innerHTML = "YOUR WEIGHT IN 'POUNDS' IS " + kilo + " WHEN WE CONVERT INTO 'KILOS' IS " + convertion;
+                document.getElementById("weight").value = "";
+                if(kilo == ""){
+                    document.getElementById("board").innerHTML = "OOPS!, YOU DID'T PUT YOUR WEIGHT TO CONVERT..."
+                }
+            }
+            function convertPounds(){
+                pound = document.getElementById("weight").value;
+                convertion = pound * 2.23;
+                document.getElementById("board").innerHTML = "YOUR WEIGHT IN 'KILOS' IS " + pound + " WHEN WE CONVERT INTO 'POUNDS' IS " + convertion;
+                document.getElementById("weight").value = "";
+                if(pound == ""){
+                    document.getElementById("board").innerHTML = "OOPS!, YOU DID'T PUT YOUR WEIGHT TO CONVERT..."
+                }
+            }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <button class="btn btn-success m-4" data-bs-target="#w-convertor" data-bs-toggle="modal">Weight convertor</button>
+        <div class="modal" id="w-convertor">
+           <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Weight Convertor</h2>
+                    <button data-bs-dismiss="modal" class="btn btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="number" id="weight" class="form-input w-100 ">
+                    <div id="board" style="background-color: rgba(149, 255, 0, 0.616); color:aliceblue; width: 90%; height:90px; border-radius: 10px; margin: 20px; color: black; text-align: center; font-weight: bold; font-family: monospace; align-items: center; justify-content: center; padding-top: 30px;">
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content:space-between;">
+                    <button id="convertK" class="btn btn-warning" onclick="convertKilos()">Convert Into Kilos</button>
+                    <button id="convertP" class="btn btn-warning" onclick="convertPounds()">Convert Into Pounds</button>
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

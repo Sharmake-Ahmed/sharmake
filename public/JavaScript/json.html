@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+    <script>
+        function fetchdata(){
+            fetch("../data/product.json")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                for(var item of data){
+                    var tr = document.createElement("tr");
+                    var tdName = document.createElement("td");
+                    var tdAge = document.createElement("td");
+                    var tdCity = document.createElement("td");
+
+                    tdName.innerHTML = item.name;
+                    tdAge.innerHTML = item.age;
+                    tdCity.innerHTML = item.city;
+
+                    tr.appendChild(tdName);
+                    tr.appendChild(tdAge);
+                    tr.appendChild(tdCity);
+
+                    document.querySelector("tbody").appendChild(tr);
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <button onclick="fetchdata()">fetch data</button>
+    <table border="5px">
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>age</td>
+                <td>city</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

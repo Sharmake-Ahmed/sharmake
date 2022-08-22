@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>API's NASA</title>
+    <script>
+        function bodyload(){
+            fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                for(var item of data.photos){
+                    var tr = document.createElement("tr");
+                    var tdID = document.createElement("td");
+                    var tdROVER = document.createElement("td");
+                    var tdDATE = document.createElement("td");
+                    var tdPhotos = document.createElement("td");
+
+                    tdID.innerHTML = item.id;
+                    tdROVER.innerHTML = item.rover.name;
+                    tdDATE.innerHTML = item.earth_date;
+                    tdPhotos.innerHTML = `
+                    <img src="${item.img_src}" width="100">
+                    `;
+                    tr.appendChild(tdID);
+                    tr.appendChild(tdROVER);
+                    tr.appendChild(tdDATE);
+                    tr.appendChild(tdPhotos);
+                    document.querySelector("tbody").appendChild(tr);
+                }
+            })
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div class="container-fluid">
+        <table class="table">
+            <thead class="table-head">
+                <tr class="row-1">
+                    <td class="col-1">ID</td>
+                    <td class="col-2">ROVER</td>
+                    <td class="col-3">DATE</td>
+                    <td class="col-4">PERVIEW</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>

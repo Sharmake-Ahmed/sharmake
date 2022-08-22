@@ -1,0 +1,53 @@
+[{ "name": "SHARMAKE AHMED MAHAMED",
+    "id": "boh-5678",
+    "grade": "12th",
+    "subjects":{
+      "math": 78,
+      "english": 86,
+      "biology": 82,
+      "chemstary": 73,
+      "physics": 80,
+      "attitude": 92
+    },
+    "birth": 1998
+  },
+  {"name": "ahmed farah ali",
+  "id": "boh-5679",
+  "grade": "12th",
+  "subjects":{
+    "math": 70,
+    "english": 82,
+    "biology": 75,
+    "chemstary": 69,
+    "physics": 71,
+    "attitude": 87
+  },
+  "birth": 1997
+},
+{ "name": "yasir jama omar",
+  "id": "boh-5680",
+  "grade": "12th",
+  "subjects":{
+    "math": 74,
+    "english": 85,
+    "biology": 81,
+    "chemstary": 78,
+    "physics": 70,
+    "attitude": 82
+  },
+  "birth": 1999
+},
+{ "name": "yahye liban othman",
+  "id": "boh-5681",
+  "grade": "12th",
+  "subjects":{
+    "math": 74,
+    "english": 83,
+    "biology": 78,
+    "chemstary": 71,
+    "physics": 78,
+    "attitude": 91
+  },
+  "birth": 1997
+}
+]

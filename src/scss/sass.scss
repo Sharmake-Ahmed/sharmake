@@ -1,0 +1,18 @@
+$border-r: 7px;
+$color: rgba(0, 178, 187, 0.732);
+$note: black;
+$bgcol: rgb(166, 0, 255);
+$wide: 300px;
+.container{
+    background-color: $bgcol;
+    border-radius: $border-r;
+    width: $wide;
+    h1{
+        color: $color;
+        }
+    p{
+        $padding: 50px;
+        padding: $padding;
+        color: $note;
+    }
+}

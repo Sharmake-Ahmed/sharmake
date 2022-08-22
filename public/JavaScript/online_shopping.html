@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>online shopping</title>
+    <script>
+        function laodCategories(){
+            fetch("http://fakestoreapi.com/products/categories")
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                data.unshift("all");
+                for(var item of data){
+                    var option = document.createElement("option");
+                    option.text = item.toUpperCase();
+                    option.value = item;
+                    document.getElementById("listCategories").appendChild(option);
+                }
+            })
+        }
+        function loadProducts(url){
+            fetch(url)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                for(var item of data){
+                    var card = document.createElement("div");
+                    card.className = "card p-2 m-2";
+                    card.style.height = "380px";
+                    card.style.width = "210px";
+                    card.innerHTML = `
+                    <div class="card-header">
+                        <img height="120px" width="100px" src="${item.image}" ><br>
+                        ${item.title}
+                    </div>
+                    <div class="card-body">
+                        Price : &#36; ${item.price}
+                        <div><span class="bi bi-star-fill bg-success text-light p-1 m-3">${item.rating.rate}</span> <span> [ ${item.rating.count} ]</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-danger w-100">
+                            <span class="bi bi-cart4"></span> Add to cart
+                        </button>
+                    
+                    `;
+                    document.getElementById("main").appendChild(card);
+                }
+            })
+        }
+        
+        function categoryName(){
+            var category = document.getElementById("listCategories").value;
+            loadProducts(`http://fakestoreapi.com/products/category/${category}`);
+        }
+        function bodyload(){
+            laodCategories();
+            loadProducts("http://fakestoreapi.com/products");
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <header class="text-center bg-secondary p-2 m-2" >
+        <h1><span class="bi bi-cart2"></span> online shopping</h1>
+    </header>
+    <section class="row">
+        <nav class="col-2">
+            <label>Select Category</label>
+            <div>
+                <select onchange="categoryName()" class="form-select" id="listCategories">
+
+                </select>
+            </div>
+        </nav>
+        <main class="col-8 d-flex flex-wrap" height="530px" id="main">
+            
+        </main>
+        <aside class="col-2">
+            <button class="btn btn-success"><span class="bi bi-cart3"></span>[ ] Your Cart</button>
+        </aside>
+    </section>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
