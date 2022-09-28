@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window</title>
+    <script>
+        function Openclick(){
+            window.open("../ac.jpg","ac","width=200","height=200");
+            for(var item of navigator.plugins){
+                document.write(item.name + "<br>");
+            }
+            for(var item of navigator.mimeTypes){
+                document.write(item.type +"<br>")
+            }
+            if(navigator.plugins["Chrome PDF Viewer"]==undefined){
+                document.write("Please install Chrome PDF Viewer to view the PDF files");
+            }else{
+                document.write("you can read PDF documents on your broser" + "<br>")
+            }
+            document.write(`
+            Broser Family : ${navigator.appName}<br>
+            Version : ${navigator.appVersion}<br>
+            Language : ${navigator.language}<br>
+            Platform : ${navigator.platform}<br>
+            Online : ${navigator.onLine}`);
+        }
+        function close(){
+            window.close();
+        }
+        function getLocation(){
+            navigator.geolocation.getCurrentPosition((position)=>{
+                document.write(`
+                Latitude : ${position.coords.latitude}<br>
+                Longitude : ${position.coords.longitude}<br>`);
+            })
+        }
+    </script>
+</head>
+<body>
+    <h3>window methods</h3>
+    <button onclick="Openclick()">open</button>
+    <button onclick="close()">close</button>
+    <button onclick="window.print()">print</button>
+    <div>
+        <button onclick="getLocation()">Location</button><br>
+        <a href="https://api.whatsapp.com/send?phone=916304938150&text=hello%20Sharmake">whatsApp</a>
+    </div>
+</body>
+</html>
